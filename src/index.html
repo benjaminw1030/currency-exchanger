@@ -6,33 +6,34 @@
 </head>
 
 <body>
-  <div class='jumbotron'>
-    <h3>Currency Exchanger</h3>
+  <div class="container">
+    <div class='jumbotron'>
+      <h3>Currency Exchanger</h3>
+    </div>
+    <form class='form-inline' id='currency-exchange-form'>
+      <div class='form-group mb-2'>
+        <label for='USD-amount'>Enter Amount in USD (US$)</label>
+        <input type='number' class='form-control' name='USD-amount' id='USD-amount'>
+      </div>
+      <div class='form-group mb-2'>
+        <label for='currency'>Select currency to convert to</label>
+        <select name='currency' class='form-control' id='currency'>
+          <option value='EUR'>Euro (€)</option>
+          <option value='JPY'>Japanese Yen (¥)</option>
+          <option value='GBP'>Pound Sterling (£)</option>
+          <option value='AUD'>Australian Dollar (A$)</option>
+          <option value='CAD'>Canadian Dollar (C$)</option>
+          <option value='CHF'>Swiss Franc (CHF)</option>
+          <option value='CNY'>Renminbi (元 / ¥)</option>
+          <option value='HKD'>Hong Kong dollar (HK$)</option>
+          <option value='MXN'>Mexican Peso ($)</option>
+        </select>
+      </div>
+      <button type='submit' class='btn btn-dark mb-2'>Convert!</button>
+    </form>
+    <p id='currency-output'></p>
+    <p id='error-output'></p>
   </div>
-
-  <form class='form-inline' id='currency-exchange-form'>
-    <div class='form-group mb-2'>
-      <label for='USD-amount'>Enter Amount in USD (US$)</label>
-      <input type='number' class='form-control' name='USD-amount' id='USD-amount'>
-    </div>
-    <div class='form-group mb-2'>
-      <label for='currency'>Select currency to convert to</label>
-      <select name='currency' class='form-control' id='currency'>
-        <option value='EUR'>Euro (€)</option>
-        <option value='JPY'>Japanese Yen (¥)</option>
-        <option value='GBP'>Pound Sterling (£)</option>
-        <option value='AUD'>Australian Dollar (A$)</option>
-        <option value='CAD'>Canadian Dollar (C$)</option>
-        <option value='CHF'>Swiss Franc (CHF)</option>
-        <option value='CNY'>Renminbi (元 / ¥)</option>
-        <option value='HKD'>Hong Kong dollar (HK$)</option>
-        <option value='MXN'>Mexican Peso ($)</option>
-      </select>
-    </div>
-    <button type='submit' class='btn btn-dark mb-2'>Convert!</button>
-  </form>
-  <p id='currency-output'></p>
-  <p id='error-output'></p>
 </body>
 
 </html>
