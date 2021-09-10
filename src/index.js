@@ -13,7 +13,6 @@ function reset() {
 }
 
 function outputExchange(amount, currency1, currency2, response) {
-  console.log(response)
   if (response.result === 'success') {
     let exchangeRate = response.conversion_rates[currency2];
     if (exchangeRate === undefined) {
