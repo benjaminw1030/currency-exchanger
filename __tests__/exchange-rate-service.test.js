@@ -1,6 +1,6 @@
-import Template from './../src/js/template.js';
+import ExchangeRateService from './../src/services/exchange-rate-service.js';
 
-describe('Template', () => {
+describe('ExchangeRateService', () => {
 
   let template;
 
