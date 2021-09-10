@@ -4,17 +4,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import ExchangeRateService from './services/exchange-rate-service.js';
 
-function outputExchange(amount, currency, response) {
-  if (response.result === 'success' && response.conversion_rates[currency] !== undefined) {
-    console.log(response.result)
-    let outputAmount = (amount * response.conversion_rates[currency]).toFixed(2);
-    $('#currency-output').text(`This amount of USD is worth ${outputAmount} ${currency}`);
-  } else if (response.result === 'success' && response.conversion_rates[currency] === undefined) {
-    $('#error-output').text(`There was an error: currency to obtain does not exist.`)
-  } else if (response.result === 'error' && response['error-type'] === 'unsupported-code') {
-    $('#error-output').text(`There was an error: currency to exchange does not exist.`)
+function outputExchange(amount, currency1, currency2, response) {
+  if (response.result === 'success' && response.conversion_rates[currency2] !== undefined) {
+    let outputAmount = (amount * response.conversion_rates[currency2]).toFixed(2);
+    $('#currency-output').text(`This amount of ${currency1} is worth ${outputAmount} ${currency2}`);
+  } else if (response.result === 'success' && response.conversion_rates[currency1] === undefined) {
+    $('#error-output').text(`There was an error: currency to convert to does not exist.`)
   } else {
-    $('#error-output').text(`There was an error: ${response.message}.`)
+    $('#error-output').text(`There was an error: ${response.message}. Check currency to convert from.`)
   }
 }
 
@@ -32,7 +29,8 @@ $(document).ready(function () {
     }
     ExchangeRateService.currencyExchange(currency1)
       .then(function (response) {
-        outputExchange(amount, currency2, response);
+        console.log(response)
+        outputExchange(amount, currency1, currency2, response);
       });
   });
 });

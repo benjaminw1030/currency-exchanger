@@ -36,6 +36,18 @@ a:visited {
   text-align: center;
 }
 
+.form-group {
+  margin-bottom:30px;
+}
+
+.small-text {
+  font-size: 11px;
+}
+
+#output {
+  text-align: center;
+}
+
 input,
 select {
   margin-left: 10px;

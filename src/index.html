@@ -8,7 +8,8 @@
 <body>
   <div class="container">
     <div class='jumbotron'>
-      <h3>Currency Exchanger</h3>
+      <h1>Currency Exchanger</h1>
+      <p>Enter an amount of a currency to see the exchange rate.</p>
     </div>
     <div class="row">
       <div class="col-md">
@@ -53,16 +54,18 @@
               <option value='RON'>Romanian leu (L)</option>
               <option value='other'>currency not listed</option>
             </select>
-            <label for='currency-other-1'>If currency is not listed, enter the corresponding ISO 4217 Three Letter
+            <label for='currency-other-1' class='small-text'>If currency is not listed, enter the corresponding ISO 4217
+              Three Letter
               Currency Code from <a href='https://www.exchangerate-api.com/docs/supported-currencies'>this</a>
               list.</label>
             <input type='text' title='Code must be 3 characters' pattern="[A-Za-z]{3}" class='form-control'
               name='currency-other-1' id='currency-other-1'>
-            <div class="form-group">
-              <label for='USD-amount'>Enter Amount:</label>
-              <input type='number' min='0' step='.01' class='form-control' name='USD-amount' id='USD-amount'>
-            </div>
           </div>
+          <div class="form-group">
+            <label for='amount'>Enter Amount:</label>
+            <input type='number' min='0' step='.01' class='form-control' name='amount' id='amount'>
+          </div>
+
           <div class='form-group'>
             <label for='currency-2'>Select currency to convert to:</label>
             <select name='currency-2' class='form-control' id='currency-2'>
@@ -103,24 +106,25 @@
               <option value='RON'>Romanian leu (L)</option>
               <option value='other'>currency not listed</option>
             </select>
-            <label for='currency-other-2'>If currency is not listed, enter the corresponding ISO 4217 Three Letter
+            <label for='currency-other-2' class='small-text'>If currency is not listed, enter the corresponding ISO 4217
+              Three Letter
               Currency Code from <a href='https://www.exchangerate-api.com/docs/supported-currencies'>this</a>
               list.</label>
-              <input type='text' title='Code must be 3 characters, all caps' pattern="[A-Z]{3}" class='form-control'
+            <input type='text' title='Code must be 3 characters, all caps' pattern="[A-Z]{3}" class='form-control'
               name='currency-other-2' id='currency-other-2'>
-            </div>
+          </div>
           <button type='submit' class='btn btn-dark'>Convert!</button>
         </form>
       </div>
-      <div class="col-md">
+      <div class='col-md' id='output'>
         <p id='currency-output'></p>
         <p id='error-output'></p>
       </div>
     </div>
   </div>
+    <div id="portfolio">
+      <p>Back to <a href="https://benjaminw1030.github.io/portfolio/">my portfolio</a>.</p>
+    </div>
 </body>
-<div class="container" id="portfolio">
-  <p>Back to <a href="https://benjaminw1030.github.io/portfolio/">my portfolio</a>.</p>
-</div>
 
 </html>
