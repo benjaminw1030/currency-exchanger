@@ -1,0 +1,43 @@
+body {
+  background-color: #0B0C10;
+  color: #C5C6C7;
+}
+
+.jumbotron {
+  padding: 20px;
+  text-align: center;
+  background-color: #45A29E;
+  color: #66FCF1;
+  margin-top: 15px;
+}
+
+.btn-dark {
+  margin: auto;
+  margin-top: 10px;
+  width: 50%;
+  color: #C5C6C7;
+  background-color: #1F2833;
+  display: flex;
+  justify-content: center;
+}
+
+a:link {
+  color: #66FCF1;
+}
+
+a:visited {
+  color: #45A29E;
+}
+
+#portfolio {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+}
+
+input,
+select {
+  margin-left: 10px;
+  margin-right: 10px;
+}
