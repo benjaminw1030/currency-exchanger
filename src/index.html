@@ -14,23 +14,101 @@
       <div class="col-md">
         <form id='currency-exchange-form'>
           <div class='form-group'>
-            <label for='USD-amount'>Enter Amount in USD (US$):</label>
-            <input type='number' class='form-control' name='USD-amount' id='USD-amount'>
-          </div>
-          <div class='form-group'>
-            <label for='currency'>Select currency to convert to:</label>
-            <select name='currency' class='form-control' id='currency'>
+            <label for='currency-1'>Select currency to convert from:</label>
+            <select name='currency-1' class='form-control' id='currency-1'>
+              <option value='USD'>United States dollar (US$)</option>
               <option value='EUR'>Euro (€)</option>
-              <option value='JPY'>Japanese Yen (¥)</option>
-              <option value='GBP'>Pound Sterling (£)</option>
-              <option value='AUD'>Australian Dollar (A$)</option>
-              <option value='CAD'>Canadian Dollar (C$)</option>
-              <option value='CHF'>Swiss Franc (CHF)</option>
+              <option value='JPY'>Japanese yen (¥)</option>
+              <option value='GBP'>Pound sterling (£)</option>
+              <option value='AUD'>Australian dollar (A$)</option>
+              <option value='CAD'>Canadian dollar (C$)</option>
+              <option value='CHF'>Swiss franc (CHF)</option>
               <option value='CNY'>Renminbi (元 / ¥)</option>
               <option value='HKD'>Hong Kong dollar (HK$)</option>
-              <option value='MXN'>Mexican Peso ($)</option>
+              <option value='NZD'>New Zealand dollar (NZ$)</option>
+              <option value='SEK'>Swedish krona (kr)</option>
+              <option value='KRW'>South Korean won (₩)</option>
+              <option value='SGD'>Singapore dollar (S$)</option>
+              <option value='NOK'>Norwegian krone (HK$)</option>
+              <option value='MXN'>Mexican peso ($)</option>
+              <option value='INR'>Indian rupee (₹)</option>
+              <option value='RUB'>Russian ruble (₽}</option>
+              <option value='ZAR'>South African rand (R)</option>
+              <option value='TRY'>Turkish lira (₺)</option>
+              <option value='BRL'>Brazilian real (R$)</option>
+              <option value='TWD'>New Taiwan dollar (NT$)</option>
+              <option value='DKK'>Danish krone (kr)</option>
+              <option value='PLN'>Polish złoty (zł)</option>
+              <option value='THB'>Thai baht (฿)</option>
+              <option value='IDR'>Indonesian rupiah</option>
+              <option value='HUF'>Hungarian forint (Ft)</option>
+              <option value='CZK'>Czech koruna (Kč)</option>
+              <option value='ILS'>Israelia new shekel (₪)</option>
+              <option value='CLP'>Chilean peso (CLP$)</option>
+              <option value='PHP'>Philippine peso (₱)</option>
+              <option value='AED'>UAE dirham (د.إ)</option>
+              <option value='COP'>Colombian peso (COL$)</option>
+              <option value='SAR'>Saudi riyal (﷼)</option>
+              <option value='MYR'>Malaysian ringgit (RM)</option>
+              <option value='RON'>Romanian leu (L)</option>
+              <option value='other'>currency not listed</option>
             </select>
+            <label for='currency-other-1'>If currency is not listed, enter the corresponding ISO 4217 Three Letter
+              Currency Code from <a href='https://www.exchangerate-api.com/docs/supported-currencies'>this</a>
+              list.</label>
+            <input type='text' title='Code must be 3 characters' pattern="[A-Za-z]{3}" class='form-control'
+              name='currency-other-1' id='currency-other-1'>
+            <div class="form-group">
+              <label for='USD-amount'>Enter Amount:</label>
+              <input type='number' min='0' step='.01' class='form-control' name='USD-amount' id='USD-amount'>
+            </div>
           </div>
+          <div class='form-group'>
+            <label for='currency-2'>Select currency to convert to:</label>
+            <select name='currency-2' class='form-control' id='currency-2'>
+              <option value='EUR'>Euro (€)</option>
+              <option value='USD'>United States dollar (US$)</option>
+              <option value='JPY'>Japanese yen (¥)</option>
+              <option value='GBP'>Pound sterling (£)</option>
+              <option value='AUD'>Australian dollar (A$)</option>
+              <option value='CAD'>Canadian dollar (C$)</option>
+              <option value='CHF'>Swiss franc (CHF)</option>
+              <option value='CNY'>Renminbi (元 / ¥)</option>
+              <option value='HKD'>Hong Kong dollar (HK$)</option>
+              <option value='NZD'>New Zealand dollar (NZ$)</option>
+              <option value='SEK'>Swedish krona (kr)</option>
+              <option value='KRW'>South Korean won (₩)</option>
+              <option value='SGD'>Singapore dollar (S$)</option>
+              <option value='NOK'>Norwegian krone (HK$)</option>
+              <option value='MXN'>Mexican peso ($)</option>
+              <option value='INR'>Indian rupee (₹)</option>
+              <option value='RUB'>Russian ruble (₽}</option>
+              <option value='ZAR'>South African rand (R)</option>
+              <option value='TRY'>Turkish lira (₺)</option>
+              <option value='BRL'>Brazilian real (R$)</option>
+              <option value='TWD'>New Taiwan dollar (NT$)</option>
+              <option value='DKK'>Danish krone (kr)</option>
+              <option value='PLN'>Polish złoty (zł)</option>
+              <option value='THB'>Thai baht (฿)</option>
+              <option value='IDR'>Indonesian rupiah</option>
+              <option value='HUF'>Hungarian forint (Ft)</option>
+              <option value='CZK'>Czech koruna (Kč)</option>
+              <option value='ILS'>Israelia new shekel (₪)</option>
+              <option value='CLP'>Chilean peso (CLP$)</option>
+              <option value='PHP'>Philippine peso (₱)</option>
+              <option value='AED'>UAE dirham (د.إ)</option>
+              <option value='COP'>Colombian peso (COL$)</option>
+              <option value='SAR'>Saudi riyal (﷼)</option>
+              <option value='MYR'>Malaysian ringgit (RM)</option>
+              <option value='RON'>Romanian leu (L)</option>
+              <option value='other'>currency not listed</option>
+            </select>
+            <label for='currency-other-2'>If currency is not listed, enter the corresponding ISO 4217 Three Letter
+              Currency Code from <a href='https://www.exchangerate-api.com/docs/supported-currencies'>this</a>
+              list.</label>
+              <input type='text' title='Code must be 3 characters, all caps' pattern="[A-Z]{3}" class='form-control'
+              name='currency-other-2' id='currency-other-2'>
+            </div>
           <button type='submit' class='btn btn-dark'>Convert!</button>
         </form>
       </div>
@@ -44,4 +122,5 @@
 <div class="container" id="portfolio">
   <p>Back to <a href="https://benjaminw1030.github.io/portfolio/">my portfolio</a>.</p>
 </div>
+
 </html>
