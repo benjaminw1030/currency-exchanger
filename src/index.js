@@ -13,11 +13,15 @@ function reset() {
 }
 
 function outputExchange(amount, currency1, currency2, response) {
-  if (response.result === 'success' && response.conversion_rates[currency2] !== undefined) {
-    let outputAmount = (amount * response.conversion_rates[currency2]).toFixed(2);
-    $('#currency-output').text(`${amount.toFixed(2)} ${currency1} is worth ${outputAmount} ${currency2}`);
-  } else if (response.result === 'success' && response.conversion_rates[currency1] === undefined) {
-    $('#error-output').text(`There was an error: currency to convert to does not exist.`);
+  console.log(response)
+  if (response.result === 'success') {
+    let exchangeRate = response.conversion_rates[currency2];
+    if (exchangeRate === undefined) {
+      $('#error-output').text(`There was an error: currency to convert to does not exist.`);
+    } else {
+      let outputAmount = (amount * exchangeRate).toFixed(2);
+      $('#currency-output').text(`${amount.toFixed(2)} ${currency1} is worth ${outputAmount} ${currency2}`);
+    }
   } else {
     $('#error-output').text(`There was an error: ${response.message}. Check currency to convert from.`);
   }
@@ -40,7 +44,6 @@ $(document).ready(function () {
     if (currencyOther2 !== '') {
       currency2 = currencyOther2;
     }
-    console.log(amount, typeof amount)
     if (currency1 === '' || currency2 === '') {
       $('#error-output').text('Please select a currency.');
     } else {

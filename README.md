@@ -26,7 +26,7 @@ This program will access the [Exchange Rate API](https://www.exchangerate-api.co
 5. Visit the [Exchange Rate API sign up page](https://app.exchangerate-api.com/sign-up) and follow the instructions to obtain a free API key.
 6. Create a file named ".env" in the top-level directory of the project.
 7. Type "API_KEY=*"provided API key here"* in this file and save it.
-8. Type "npm run start" to output an index.html file in the "dist" directory and automatically bring up the distribution build in a Chrome web browser.
+8. Type "npm run start" to output an index.html file in the "dist" directory and bring up the distribution build in a Chrome web browser.
 
 See it hosted directly on [GitHub Pages](https://benjaminw1030.github.io/currency-exchanger/).
 
