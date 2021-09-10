@@ -20,7 +20,7 @@ function outputExchange(amount, currency1, currency2, response) {
       $('#error-output').text(`There was an error: currency to convert to does not exist.`);
     } else {
       let outputAmount = (amount * exchangeRate).toFixed(2);
-      $('#currency-output').text(`${amount.toFixed(2)} ${currency1} is worth ${outputAmount} ${currency2}`);
+      $('#currency-output').text(`${amount.toFixed(2)} ${currency1} is worth ${outputAmount} ${currency2}.`);
     }
   } else {
     $('#error-output').text(`There was an error: ${response.message}. Check currency to convert from.`);
