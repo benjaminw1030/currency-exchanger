@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Currency Exchanger</title>
 </head>
+
 <body>
   <div class="jumbotron">
     <h3>Currency Exchanger</h3>
   </div>
 
-  <form class="form-inline" id="spell-search">
+  <form class="form-inline" id="currency-exchange-form">
     <div class="form-group mb-2">
-    <label for="USD-amount">Enter Amount in USD (US$)</label>
+      <label for="USD-amount">Enter Amount in USD (US$)</label>
       <input type="number" class="form-control" name="USD-amount" id="USD-amount">
     </div>
     <div class="form-group mb-2">
@@ -29,11 +31,7 @@
     </div>
     <button type="submit" class="btn btn-dark mb-2">Convert!</button>
   </form>
-  <form id="currency-exchange-form">
-    <label for="amount-input"></label>
-    <input id="amount-input" type="number">
-    <button class="btn btn-dark" type="submit"></button>
-  </form>
-  <div id="currency-output"></div>
+  <p id="currency-output"></p>
 </body>
+
 </html>
