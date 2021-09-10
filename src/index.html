@@ -15,8 +15,8 @@
       <div class="col-md">
         <form id='currency-exchange-form'>
           <div class='form-group'>
-            <label for='currency-1'>Select currency to convert from:</label>
-            <select name='currency-1' class='form-control' id='currency-1'>
+            <select name='currency-1' class='form-control' id='currency-1' required>
+              <option value=''>Select currency to convert from</option>
               <option value='USD'>United States dollar (US$)</option>
               <option value='EUR'>Euro (€)</option>
               <option value='JPY'>Japanese yen (¥)</option>
@@ -58,19 +58,18 @@
               Three Letter
               Currency Code from <a href='https://www.exchangerate-api.com/docs/supported-currencies'>this</a>
               list.</label>
-            <input type='text' title='Code must be 3 characters' pattern="[A-Za-z]{3}" class='form-control'
+            <input type='text' title='Code must be 3 letters' pattern="[A-Za-z]{3}" class='form-control'
               name='currency-other-1' id='currency-other-1'>
           </div>
           <div class="form-group">
-            <label for='amount'>Enter Amount:</label>
-            <input type='number' min='0' step='.01' class='form-control' name='amount' id='amount'>
+            <input type='number' min='.01' step='.01' class='form-control' name='amount' id='amount' placeholder="Enter amount">
           </div>
 
           <div class='form-group'>
-            <label for='currency-2'>Select currency to convert to:</label>
-            <select name='currency-2' class='form-control' id='currency-2'>
-              <option value='EUR'>Euro (€)</option>
+            <select name='currency-2' class='form-control' id='currency-2' required>
+              <option value=''>Select currency to convert to</option>
               <option value='USD'>United States dollar (US$)</option>
+              <option value='EUR'>Euro (€)</option>
               <option value='JPY'>Japanese yen (¥)</option>
               <option value='GBP'>Pound sterling (£)</option>
               <option value='AUD'>Australian dollar (A$)</option>
@@ -104,13 +103,12 @@
               <option value='SAR'>Saudi riyal (﷼)</option>
               <option value='MYR'>Malaysian ringgit (RM)</option>
               <option value='RON'>Romanian leu (L)</option>
-              <option value='other'>currency not listed</option>
             </select>
             <label for='currency-other-2' class='small-text'>If currency is not listed, enter the corresponding ISO 4217
               Three Letter
               Currency Code from <a href='https://www.exchangerate-api.com/docs/supported-currencies'>this</a>
               list.</label>
-            <input type='text' title='Code must be 3 characters, all caps' pattern="[A-Z]{3}" class='form-control'
+            <input type='text' title='Code must be 3 letters' pattern="[A-Za-z]{3}" class='form-control'
               name='currency-other-2' id='currency-other-2'>
           </div>
           <button type='submit' class='btn btn-dark'>Convert!</button>
